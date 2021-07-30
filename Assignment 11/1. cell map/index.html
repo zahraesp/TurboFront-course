@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      td {
+        border: 1px solid black;
+        padding: 3px 5px;
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <table></table>
+
+    <script>
+      var letters = {
+        A: [
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+        ],
+        B: [
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+        ],
+        C: [
+          [1, 1, 1, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+          [1, 1, 1, 0],
+        ],
+        D: [
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+        ],
+        E: [
+          [1, 1, 1, 0],
+          [1, 0, 0, 0],
+          [1, 1, 0, 0],
+          [1, 0, 0, 0],
+          [1, 1, 1, 0],
+        ],
+        F: [
+          [1, 1, 1, 0],
+          [1, 0, 0, 0],
+          [1, 1, 0, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+        ],
+        G: [
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+          [0, 0, 1, 0],
+          [1, 1, 1, 0],
+        ],
+        H: [
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+        ],
+        I: [
+          [1, 1, 1, 0],
+          [0, 1, 0, 0],
+          [0, 1, 0, 0],
+          [0, 1, 0, 0],
+          [1, 1, 1, 0],
+        ],
+        J: [
+          [1, 1, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+        ],
+        K: [
+          [1, 0, 1, 0],
+          [1, 1, 0, 0],
+          [1, 0, 0, 0],
+          [1, 1, 0, 0],
+          [1, 0, 1, 0],
+        ],
+        L: [
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+          [1, 1, 1, 0],
+        ],
+        M: [
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+        ],
+        N: [
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+        ],
+        O: [
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+        ],
+        P: [
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 0],
+        ],
+        R: [
+          [1, 1, 1, 0],
+          [1, 0, 1, 0],
+          [1, 1, 1, 0],
+          [1, 1, 0, 0],
+          [1, 0, 1, 0],
+        ],
+        // q,s,t,u,v,w,x,y,z --> sometimes later
+
+        " ": [
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+        ],
+      };
+
+      let table = document.body.firstElementChild;
+
+      let input = "hello lili";
+      input = input.toUpperCase();
+
+      for (let j = 0; j < 5; j++) {
+        var tr = table.insertRow();
+        for (let i = 0; i < input.length; i++) {
+          for (let k = 0; k < 4; k++) {
+              if(i == input.length-1){
+                  if(k==3)
+                  break;
+              }
+            var td = tr.insertCell();
+          }
+        }
+      }
+
+      let i = 0;
+      console.log(letters["A"].length);
+      console.log("test:", letters["A"][0][3]);
+      console.log(letters[input[0]].length);
+      console.log(letters[input[0]][0].length);
+      console.log("keys:", Object.keys(letters));
+
+      let keys = Object.keys(letters);
+
+      for (let k = 0; k < table.rows[0].cells.length; k += 4) {
+        for (let j = 0; j < letters[input[k / 4]].length; j++) {
+          for (let z = 0; z < letters[input[k / 4]][j].length; z++) {
+            for (let m = 0; m < keys.length; m++) {
+              if (keys[m] == input[k / 4]) {
+                if (letters[input[k / 4]][j][z] == 1) {
+                  console.log("hello");
+                  table.rows[j].cells[z + k].style.backgroundColor = "blue";
+                }
+                break;
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

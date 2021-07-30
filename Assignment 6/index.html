@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=optional"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="block--banner">
+      <div class="image--skewed-container">
+        <div class="image--skewed__item">
+          <img src="./images/window.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <nav class="nav collapsible">
+        <a class="nav__brand" href="/"
+          ><img src="./images/logo.png" alt=""
+        /></a>
+        <label class="nav__toggler" for="checkbox">
+          <i class="fa fa-bars"></i>
+        </label>
+        <input type="checkbox" id="checkbox" />
+
+        <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a class="active" href="">home</a></li>
+          <li class="nav__item"><a href="">about us</a></li>
+          <li class="nav__item"><a href="">partners</a></li>
+          <li class="nav__item"><a href="">stories</a></li>
+          <li class="nav__item"><a href="">contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero">
+      <h1 class="hero__heading">Get anything</h1>
+      <h2 class="hero__text">done in an instant</h2>
+      <button class="btn btn--primary">book now</button>
+    </section>
+    <section class="why-container">
+      <div class="image--overlap">
+        <div class="image--overlap__item image--overlap__item--top media-group">
+          <img class="media-group__image" src="./images/hallway.jpg" alt="" />
+          <div class="media-group__body">
+            <h3 class="media-group__body--heading section-heading">
+              why choose layzee?
+            </h3>
+            <p class="media-group__body--text section-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
+              corrupti quo in ipsam sint quibusdam cupiditate modi quia sapiente
+              iusto. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+        <div class="image--overlap__item image--overlap__item--bottom gallery">
+          <div class="gallery__item">
+            <img src="./images/carwash.png" alt="" />
+            <a href=""> Car Wash</a>
+          </div>
+          <div class="gallery__item">
+            <img src="./images/sofa-cleaning.png" alt="" />
+            <a href="">Sofa Cleaning</a>
+          </div>
+          <div class="gallery__item">
+            <img src="./images/handyman.png" alt="" />
+            <a href="">Handyman</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offers">
+      <div class="container">
+        <h3 class="section-heading">Why We Offer</h3>
+        <p class="section-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel
+          asperiores reiciendis ipsa accusantium numquam eveniet illum velit qui
+          voluptatum. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Earum, modi!
+        </p>
+        <div class="card-group">
+          <div class="card">
+            <svg class="icon icon--primary">
+              <use xlink:href="./images/sprite.svg#map"></use>
+            </svg>
+            <h4 class="card__heading">venders</h4>
+            <p class="card__text">Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="card">
+            <svg class="icon icon--primary">
+              <use xlink:href="./images/sprite.svg#magic"></use>
+            </svg>
+            <h4 class="card__heading">venders</h4>
+            <p class="card__text">Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="card">
+            <svg class="icon icon--primary">
+              <use xlink:href="./images/sprite.svg#vendors"></use>
+            </svg>
+            <h4 class="card__heading">venders</h4>
+            <p class="card__text">Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="card">
+            <svg class="icon icon--primary">
+              <use xlink:href="./images/sprite.svg#star"></use>
+            </svg>
+            <h4 class="card__heading">venders</h4>
+            <p class="card__text">Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-us">
+      <div class="container">
+        <div class="about-us-container">
+          <div class="about-us__content">
+            <h3 class="section-heading">why choose layzee?</h3>
+            <p class="section-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+              laudantium sapiente sit error, sequi voluptates unde doloribus
+              corrupti vitae assumenda omnis nulla neque, voluptatum corporis.
+            </p>
+            <button class="btn btn--primary btn--small">about us</button>
+          </div>
+          <div class="about-us__image image--overlap">
+            <div class="image--overlap__item image--overlap__item--top">
+              <img src="./images/barbershop.jpg" alt="" />
+            </div>
+            <div class="image--overlap__item image--overlap__item--bottom">
+              <img src="./images/floor.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="services__list">
+          <ul class="list">
+            <li class="list__item active">Home cleaning</li>
+            <li class="list__item">Carwash</li>
+            <li class="list__item">Personl care</li>
+            <li class="list__item">Pet grooming</li>
+          </ul>
+        </div>
+        <div class="services__gallery">
+          <div class="services__gallery--main">
+            <img src="./images/sofa-leather.png" alt="" />
+          </div>
+          <div class="services__gallery--sub">
+            <div class="gallery__item">
+              <img src="./images/room-clean.png" alt="" />
+              <h4>Home Cleaners</h4>
+              <p>150 near you</p>
+            </div>
+            <div class="gallery__item">
+              <img src="./images/carpet-clean.png" alt="" />
+              <h4>Carpet Cleaners</h4>
+              <p>300 near you</p>
+            </div>
+            <div class="gallery__item">
+              <img src="./images/handyman2.png" alt="" />
+              <h4>Handyman</h4>
+              <p>500 near you</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="user-experience">
+      <div class="container">
+        <div class="user-experience__header">
+          <h3 class="section-heading">Experience the convenience</h3>
+          <h4>our customer love our services</h4>
+        </div>
+        <div class="user-experience__comment">
+          <div class="testimonial">
+            <div class="testimonial__image">
+              <img class="" src="./images/profile-pic2.png" alt="" />
+            </div>
+            <blockquote class="quote">
+              <header>
+                <div class="media">
+                  <h4 class="media__title quote__auther">Moble Cobb</h4>
+                  <div class="media__image">
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                  </div>
+                </div>
+              </header>
+              <p class="quote__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+                voluptates neque consequatur? Consequuntur, harum esse id odio
+                dolor sed provident.
+              </p>
+            </blockquote>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial__image">
+              <img class="" src="./images/profile-pic.png" alt="" />
+            </div>
+            <blockquote class="quote">
+              <header>
+                <div class="media">
+                  <h4 class="media__title quote__auther">Moble Cobb</h4>
+                  <div class="media__image">
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                    <svg class="icon icon--ranking">
+                      <use xlink:href="./images/sprite.svg#star"></use>
+                    </svg>
+                  </div>
+                </div>
+              </header>
+              <p class="quote__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+                voluptates neque consequatur? Consequuntur, harum esse id odio
+                dolor sed provident.
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="brands-container">
+          <div class="brand">
+            <img
+              class="brand--gray brand--brightness"
+              src="./images/logo4.png"
+              alt=""
+            />
+          </div>
+          <div class="brand">
+            <img
+              class="brand--gray brand--brightness"
+              src="./images/logo3.png"
+              alt=""
+            />
+          </div>
+          <div class="brand">
+            <img
+              class="brand--gray brand--brightness"
+              src="./images/logo2.png"
+              alt=""
+            />
+          </div>
+          <div class="brand">
+            <img
+              class="brand--gray brand--brightness"
+              src="./images/logo1.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

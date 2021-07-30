@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="div first"></div>
+    <div class="second">
+      <div class="container">
+        <img class="layer" id="layer1" src="./images/image-layer1.svg" alt="" />
+        <img class="layer" id="layer2" src="./images/image-layer2.svg" alt="" />
+        <img class="layer" id="layer3" src="./images/image-layer3.svg" alt="" />
+        <img class="layer" id="layer4" src="./images/image-layer4.svg" alt="" />
+        <img class="layer" id="layer5" src="./images/image-layer5.svg" alt="" />
+      </div>
+    </div>
+    <div class="div third"></div>
+
+    <script>
+      function elementInViewport(element) {
+        var top = element.offsetTop;
+        var left = element.offsetLeft;
+        var width = element.offsetWidth;
+        var height = element.offsetHeight;
+
+        while (element.offsetParent) {
+          element = element.offsetParent;
+          top += element.offsetTop;
+          left += element.offsetLeft;
+        }
+
+        return (
+          top < window.pageYOffset + window.innerHeight &&
+          left < window.pageXOffset + window.innerWidth &&
+          top + height > window.pageYOffset &&
+          left + width > window.pageXOffset
+        );
+      }
+      function newPosotion(element, startPosition, movementVal) {
+        var secondSection = document.getElementsByClassName("second")[0];
+
+        let st = window.pageYOffset;
+        //        window.scrollY
+        let newPos =
+          movementVal *
+            (st /
+              (document.documentElement.offsetHeight -
+                document.documentElement.clientHeight)) +
+          startPosition;
+        element.style.left = newPos + "px";
+        console.log(newPos);
+        return newPos;
+      }
+
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var secondSection = document.getElementsByClassName("second")[0];
+        var layer2 = document.getElementById("layer2");
+        var layer3 = document.getElementById("layer3");
+        var layer4 = document.getElementById("layer4");
+
+        var layer2StartPos = layer2.offsetLeft;
+        console.log("layer2StartPos", layer2StartPos);
+        var layer3StartPos = layer3.offsetLeft;
+        var layer4StartPos = layer4.offsetLeft;
+
+        window.onscroll = (event) => {
+          if (elementInViewport(secondSection)) {
+            let newPos2 = newPosotion(layer2, layer2StartPos, -50);
+            // console.log("layer2 newPos", newPos2);
+
+            let newPos3 = newPosotion(layer3, layer3StartPos, 150);
+            // console.log(`layer3 newPos`, newPos3);
+
+            let newPos4 = newPosotion(layer4, layer4StartPos, 70);
+            console.log(`layer4 newPos`, newPos4);
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+$color-primary: #c1187b;
+$color-body: #312f2d;
+$color-section: #f8f8f8;
+$shadow-card: 0 0 20px 5px #eeebeb;
+$border-card: 10px;
+
+@mixin card-border() {
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 5px #eeebeb;
+}
+
+@mixin card-heading() {
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 1.4rem;
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+
+@mixin card-text($font-style) {
+  font-size: 1.2rem;
+  font-style: $font-style;
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+@mixin grid--1x2($first-column: 1fr, $second-column: 1fr) {
+  display: grid;
+  @media (min-width:768px) {
+    grid-template-columns: $first-column $second-column;
+    @content;
+  }
+}
+
+@mixin grid--1x3() {
+  display: grid;
+  @media (min-width:768px) {
+    grid-template-columns: repeat(3, 1fr);
+    @content;
+  }
+}
+
+@mixin grid--1x4() {
+  display: grid;
+  @media (min-width:768px) {
+    grid-template-columns: repeat(4, 1fr);
+    @content;
+  }
+}
+
+@mixin overlapping-image {
+  display: grid;
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin min-width($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin container() {
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+    @media (min-width: 1000px) {
+      max-width: 70%;
+    }   
+    @media (min-width: 1400px) {
+      max-width: 60%;
+    }  
+    @media (min-width: 1800px) {
+      max-width: 50%;
+    }  
+}
+

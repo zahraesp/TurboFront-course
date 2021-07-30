@@ -1,0 +1,337 @@
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+
+  .notify {
+    padding: 20px 0px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: brown;
+      border-radius: 50%;
+      left: 1px;
+    }
+  }
+
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .slider-images {
+      padding-right: 50px;
+
+      .slider-image {
+        display: none;
+
+        img {
+          width: 700px;
+          max-width: 100%;
+          height: 500px;
+          object-fit: contain;
+        }
+      }
+
+      .car-animate {
+        animation-name: car;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1;
+
+        @keyframes car {
+          0% {
+            margin-left: -120%;
+            margin-top: -40%;
+            translate: -100%;
+            transform: scale(0.5);
+            opacity: 0;
+          }
+
+          100% {
+            margin-left: 0;
+            margin-top: 0;
+            translate: 0;
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      }
+
+      .car-animate-remove {
+        animation-name: carRemove;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+
+        @keyframes carRemove {
+          0% {
+            margin-left: 0;
+            margin-top: 0;
+            translate: 0;
+            transform: scale(1);
+            opacity: 1;
+          }
+
+          100% {
+            margin-left: -120%;
+            margin-top: -40%;
+            translate: -100%;
+            transform: scale(0.5);
+            opacity: 0;
+            display: none;
+          }
+        }
+      }
+    }
+
+    .slider-description {
+      width: 400px;
+      direction: rtl;
+
+      .initial-description {
+        display: none;
+      }
+
+      .description {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-delay: .5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-name: description-animate;
+        // animation-direction: reverse;
+
+        @keyframes description-animate {
+          0% {
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+          }
+          
+          100% {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          }
+        }
+
+        .slider-title {
+          display: none;
+        }
+
+        .slider-summary {
+          display: none;
+          line-height: 30px;
+        }
+
+        .slider-price {
+          display: none;
+          font-weight: 500;
+          font-size: medium;
+        }
+
+        .payment-button {
+          display: none;
+          background-color: rgb(115, 187, 230);
+          outline-style: none;
+          border: none;
+          color: #fff;
+          font-family: "iransans";
+          width: 100px;
+          height: 30px;
+          font-size: small;
+        }
+      }
+      .description-remove {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-fill-mode: backwards;
+        animation-play-state: running;
+        animation-name: descriptionRemove;
+        // animation-direction: reverse;
+    
+        @keyframes descriptionRemove {
+          0% {
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        100% {
+              clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+          }
+        }
+
+        .slider-title {
+          display: none;
+        }
+
+        .slider-summary {
+          display: none;
+          line-height: 30px;
+        }
+
+        .slider-price {
+          display: none;
+          font-weight: 500;
+          font-size: medium;
+        }
+
+        .payment-button {
+          display: none;
+          background-color: rgb(115, 187, 230);
+          outline-style: none;
+          border: none;
+          color: #fff;
+          font-family: "iransans";
+          width: 100px;
+          height: 30px;
+          font-size: small;
+        }
+      }
+
+    }
+
+  }
+
+  .footer {
+    padding: 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+
+    .footer-specifications {
+      position: absolute;
+      right: 2%;
+      bottom: -40%;
+
+
+      .specification-animate {
+        animation-name: specify;
+        animation-duration: 1s;
+        animation-delay: .5s;
+
+        @keyframes specify {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+
+      .specification-animate-remove {
+        animation-name: specifyRemove;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+
+        @keyframes specifyRemove {
+          0% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          
+          100% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+        }
+      }
+
+      p {
+        padding: 0 10px;
+      }
+    }
+
+    .specification {
+      display: none;
+    }
+
+    .navigation-buttons {
+      position: absolute;
+      bottom: 10%;
+
+      .prevBtn,
+      .nextBtn {
+        background-color: rgb(99, 96, 96);
+        border: 1px solid rgb(180, 177, 177);
+        outline-style: none;
+
+        img {
+          text-align: center;
+        }
+      }
+      .nextBtn {
+        left: 1px;
+      }
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  padding: 20px 20px 0 0 ;
+
+  .logo {
+    position: absolute;
+  }
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 5%;
+
+    a {
+      margin: 1px 0;
+
+      img {
+        width: 24px;
+        height: auto;
+      }
+    }
+  }
+
+  .navLines {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30%;
+
+    .navLine {
+      display: inline-block;
+      height: 40px;
+      width: 1px;
+      background-color: rgb(224, 225, 228);
+    }
+    .selected {
+      background-color: rgb(115, 187, 230);
+    }
+
+    .line-animate {
+      animation-name: line;
+      animation-duration: 2s;
+
+      @keyframes line {
+        0% {
+          // transform: translateY(-100%);
+        }
+        100% {
+          // transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+

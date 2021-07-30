@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="analog-digital">
+      <div class="analog-clock">
+        <div class="arm hour"></div>
+        <div class="arm minute"></div>
+        <div class="arm second"></div>
+      </div>
+      <div class="digital-clock"></div>
+    </div>
+
+    <script>
+      let hourArm = document.querySelector(".hour");
+      let minuteArm = document.querySelector(".minute");
+      let secondArm = document.querySelector(".second");
+      let digitalClock = document.querySelector(".digital-clock");
+
+      function armRotate() {
+        const currentDate = new Date();
+
+        const hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
+        const seconds = currentDate.getSeconds();
+
+        let hourPosition = (hours * 360) / 12 + (minutes * 360) / 60 / 12;
+        let minutePosition = (minutes * 360) / 60 + (seconds * 360) / 60 / 60;
+        let secondPosition = (seconds * 360) / 60;
+
+        secondArm.style.transform = `rotate(${secondPosition}deg)`;
+        minuteArm.style.transform = `rotate(${minutePosition}deg)`;
+        hourArm.style.transform = `rotate(${hourPosition}deg)`;
+
+        setTimeout(function () {
+          armRotate();
+        }, 1000);
+      }
+
+      function displayTime() {
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+
+        // showing time in form of 2 digits;
+
+        // if (hour < 10) {
+        //   hour += "0";
+        // } else {
+        //   hour = hour;
+        // }
+        hour = twoDigit(hour);
+        min = twoDigit(min);
+
+        digitalClock.innerText = hour + " : " + min;
+
+        setTimeout(function () {
+          displayTime();
+        }, 1000);
+      }
+
+      function twoDigit(time) {
+        time = time < 10 ? "0" + time : time;
+        return time;
+      }
+
+      armRotate();
+      displayTime();
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .alert {
+      background-color: thistle;
+      height: 40px;
+      border: 1px solid violet;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 20px 0 0 10px;
+    }
+  </style>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      function modify(target, alertMessage, timeout) {
+        var div = document.createElement(target);
+        div.className = "alert";
+        div.innerHTML = alertMessage;
+        container.append(div);
+        timer=setTimeout(() => div.remove(), timeout);
+
+        container.oncontextmenu = function (event) {
+          event.preventDefault();
+
+          let stayAlert = event.target.closest(".alert");
+          let timer;
+
+          if (!stayAlert) return null;
+          if (!container.contains(stayAlert)) return null;
+
+          stayAlert.remove();
+
+      console.log("done!");
+        };
+      }
+
+      modify(
+        "div",
+        `Hi <strong> Ali</strong>, welcome to the <strong>part college</strong>!`,
+        5000
+      );
+
+      modify(
+        "div",
+        `Hi <strong> Amir</strong>, welcome to the <strong>part college</strong>!`,
+        10000
+      );
+
+      modify(
+        "div",
+        `Hi <strong> Hoda</strong>, welcome to the <strong>part college</strong>!`,
+        10000
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #eceef5;
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 50px;
+  box-shadow: 0 0 10px 5px #e0e1e8;
+}
+
+footer .category-subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  /* justify-content: space-between; */
+}
+
+footer .category-subscribe::after {
+  content: "";
+  width: 100%;
+  border: 1px solid #eaecf3;
+}
+
+footer .half {
+  flex: 1 0 50%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+footer .categories .category {
+  display: inline-block;
+  max-width: 100%;
+  flex: 1 0 100px;
+}
+
+/* footer .categories {
+  flex: 1 0 50%;
+} */
+
+footer .category p {
+  font-size: 12px;
+}
+
+footer .category p:first-child {
+  font-weight: 600;
+}
+
+footer .subscription .input-group {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  max-width: 100%;
+}
+
+footer .subscription {
+  flex-direction: column;
+  /* flex: 1 0 auto; */
+}
+
+footer .subscription .newsletter p {
+  font-size: 12px;
+}
+
+footer .subscription .newsletter p:first-child {
+  font-weight: 600;
+}
+
+footer .subscription .input-email {
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #eaecf3;
+  padding-left: 15px;
+}
+
+footer .subscription .input-button {
+  margin-bottom: 20px;
+  height: 40px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to right,
+    #89caff,
+    #84c4fe,
+    #80befd,
+    #7cb8fc,
+    #7ab2fb,
+    #77acfa,
+    #75a7f9,
+    #73a1f8,
+    #6f9bf7,
+    #6d95f6,
+    #6a8ff5,
+    #6989f3
+  );
+}
+
+footer .copy-right {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: #b9bfc8;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+footer .copy-right .half-copy-right {
+  max-width: 100%;
+}

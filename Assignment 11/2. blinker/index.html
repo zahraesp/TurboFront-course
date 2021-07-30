@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="blink">Hello, welcome!</div>
+
+    <script>
+      //   var interval1 = setInterval(() => {
+      //     if (blink.style.visibility == "visible") {
+      //       blink.style.visibility = "hidden";
+      //     } else blink.style.visibility = "visible";
+      //   }, 1000);
+      //   setTimeout(() => {
+      //     clearInterval(interval1);
+      //   }, 5000);
+
+      // var interval1 = setInterval(() => {
+
+      //         if (document.getElementById)
+      //         document.getElementById("blink").style.visibility = "visible";
+      // }, 1000);
+
+      // var interval2 = setInterval(() => {
+
+      //         if (document.getElementById)
+      //         document.getElementById("blink").style.visibility = "hidden";
+      // }, 800);
+
+      // setTimeout(() => {
+      //     clearInterval(interval1);
+      //     clearInterval(interval2);
+      // }, 10000);
+
+      function blinking(node, turnOn, turnOff, timeOut) {
+        var blink = document.getElementById(node);
+
+        function show() {
+          if (document.getElementById) blink.style.visibility = "visible";
+        }
+
+        function hide() {
+          if (document.getElementById) blink.style.visibility = "hidden";
+        }
+
+        // for (var i = 1000; i < 6000; i += 1000) {
+
+        //     setTimeout("hide()", i );
+        //     setTimeout("show()", i+800);
+        // }
+
+        var interval = setInterval(() => {
+          hide();
+          setTimeout(() => {
+            show();
+          }, turnOff);
+        }, turnOn + turnOff );
+
+        setTimeout(() => {
+          clearInterval(interval);
+        }, timeOut);
+      }
+
+      blinking("blink", 1000, 200, 5000);
+    </script>
+  </body>
+</html>

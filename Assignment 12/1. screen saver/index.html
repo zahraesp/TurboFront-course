@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        /* margin: 0; */
+      }
+      body {
+        height: 100vh;
+        background-color: #000;
+      }
+
+      div.clock {
+        /* width: 100px;
+        height: 50px; */
+        text-align: center;
+        font-size: 50px;
+        position: absolute;
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock"></div>
+
+    <script>
+      var clockElem = document.body.getElementsByClassName("clock")[0];
+
+      function displayTime() {
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        var sec = date.getSeconds();
+
+        // showing time in form of 2 digits;
+
+        // if (hour < 10) {
+        //   hour += "0";
+        // } else {
+        //   hour = hour;
+        // }
+        hour = twoDigit(hour);
+        min = twoDigit(min);
+        sec = twoDigit(sec);
+
+        clockElem.innerText = hour + " : " + min + " : " + sec;
+
+        setTimeout(function () {
+          displayTime();
+        }, 1000);
+      }
+
+      function twoDigit(time) {
+        time = time < 10 ? "0" + time : time;
+        return time;
+      }
+
+      function newPosition() {
+        var clockElem = document.body.getElementsByClassName("clock")[0];
+
+        var h = document.body.clientHeight - clockElem.clientHeight;
+        var w = document.body.clientWidth - clockElem.clientWidth;
+
+        var newH = Math.floor(Math.random() * h + 1);
+        var newW = Math.floor(Math.random() * w + 1);
+
+        clockElem.style.top = newH + "px";
+        clockElem.style.left = newW + "px";
+
+        // return [newH, newW];
+      }
+      
+
+      setInterval(() => {
+        newPosition();
+      }, 3000);
+
+      displayTime();
+
+      // function placement() {
+      //   var clockElem = document.body.getElementsByClassName("clock")[0];
+
+      //   var newPos = newPosition();
+      //   var oldTop = clockElem.offsetTop;
+      //   var oldLeft = clockElem.offsetLeft;
+
+      //   clockElem.style.top: newPos[0] + "px";
+      //   clockElem.style.left: newPos[1] + "px";
+      //    
+      //     function () {
+      //       placement();
+      //     }
+      //   );
+      // }
+    </script>
+  </body>
+</html>

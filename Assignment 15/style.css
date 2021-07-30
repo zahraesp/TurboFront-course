@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.div {
+  width: 100%;
+  height: 1000px;
+}
+
+.div.first {
+  background-color: aqua;
+}
+
+.div.third {
+  background-color: blueviolet;
+}
+
+.second {
+  width: 100%;
+  height: 405px;
+  position: relative;
+}
+
+.second .container {
+  width: 510px;
+  height: 100%;
+  position: relative;
+  margin: 0px auto;
+}
+
+.second img {
+  position: absolute;
+}
+
+#layer1 {
+  z-index: 10;
+  height: auto;
+}
+
+#layer2 {
+  z-index: 20;
+  top: 73px;
+  left: -30px;
+}
+
+#layer3 {
+  z-index: 30;
+  top: 120px;
+  left: 195px;
+}
+
+#layer4 {
+  z-index: 40;
+  top: 47px;
+  left: -44px;
+  width: 100%;
+}
+
+#layer5 {
+  z-index: 50;
+  top: 174px;
+  left: -124px;
+}

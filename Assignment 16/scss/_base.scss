@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "iransans";
+  src: url("../font/IRANSansWeb\(FaNum\).woff");
+}
+
+body {
+  font-family: "iransans";
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.colored-body {
+  display: none;
+}
+
+.body-animate {
+  background-color: var(--backgroundColor);
+  width: 0;
+  height: 100vh;
+  animation-name: body;
+  animation-duration: 2s;
+  @keyframes body {
+      100%{
+          width: 100%;
+      }
+  }
+}
+
+h1,
+p {
+  direction: rtl;
+  color: rgb(224, 225, 228);
+}
+p {
+  font-size: small;
+}
+
+a, button {
+  cursor: pointer;
+}
+

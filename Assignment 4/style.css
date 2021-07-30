@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: helvetica;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overflow-table {
+  border-radius: 0 0 3px 3px;
+  overflow-x: auto;
+  border-bottom: 2px solid #f2f2f2;
+  border-right: 2px solid #f2f2f2;
+}
+
+.overflow-table table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.overflow-table table {
+  width: 1100px;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+}
+
+.overflow-table table tr {
+  height: 40px;
+}
+
+.overflow-table table thead th:first-child,
+.overflow-table table tbody td:first-child {
+  width: 900px !important;
+}
+
+.overflow-table thead th:not(:first-child),
+.overflow-table tbody td:not(:first-child) {
+  width: 100px;
+  text-align: center;
+  color: #168912cb;
+}
+
+.overflow-table table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.overflow-table tbody td:not(:first-child) {
+  position: relative;
+}
+
+.overflow-table tbody td:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 10px;
+  border-left: 3px solid #168912cb;
+  border-bottom: 3px solid #168912cb;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.overflow-table tbody .disable::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 10px;
+  border-left: 3px solid #d2d0d0 !important;
+  border-bottom: 3px solid #d2d0d0 !important;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.overflow-table tbody .new-feature {
+  position: relative;
+}
+
+.overflow-table tbody .new-feature::after {
+  content: "new";
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  padding: 0 3px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #168912cb;
+  margin-top: -5px;
+}
+
+.overflow-table thead th:last-child {
+    border-left: 2px solid #f2f2f2;
+}
+
+.overflow-table thead th:last-child,
+.overflow-table tbody td:last-child {
+    background-color: #f0f0f08a;
+}

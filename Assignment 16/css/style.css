@@ -1,0 +1,377 @@
+@font-face {
+  font-family: "iransans";
+  src: url("../font/IRANSansWeb(FaNum).woff");
+}
+
+body {
+  font-family: "iransans";
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.colored-body {
+  display: none;
+}
+
+.body-animate {
+  background-color: var(--backgroundColor);
+  width: 0;
+  height: 100vh;
+  animation-name: body;
+  animation-duration: 2s;
+}
+
+@keyframes body {
+  100% {
+    width: 100%;
+  }
+}
+
+h1,
+p {
+  direction: rtl;
+  color: #e0e1e4;
+}
+
+p {
+  font-size: small;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.slider-wrapper .notify {
+  padding: 20px 0px;
+  position: relative;
+}
+
+.slider-wrapper .notify::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: brown;
+  border-radius: 50%;
+  left: 1px;
+}
+
+.slider-wrapper .slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-wrapper .slider .slider-images {
+  padding-right: 50px;
+}
+
+.slider-wrapper .slider .slider-images .slider-image {
+  display: none;
+}
+
+.slider-wrapper .slider .slider-images .slider-image img {
+  width: 700px;
+  max-width: 100%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.slider-wrapper .slider .slider-images .car-animate {
+  animation-name: car;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1;
+}
+
+@keyframes car {
+  0% {
+    margin-left: -120%;
+    margin-top: -40%;
+    translate: -100%;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+    translate: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.slider-wrapper .slider .slider-images .car-animate-remove {
+  animation-name: carRemove;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes carRemove {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+    translate: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    margin-left: -120%;
+    margin-top: -40%;
+    translate: -100%;
+    transform: scale(0.5);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.slider-wrapper .slider .slider-description {
+  width: 400px;
+  direction: rtl;
+}
+
+.slider-wrapper .slider .slider-description .initial-description {
+  display: none;
+}
+
+.slider-wrapper .slider .slider-description .description {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: description-animate;
+}
+
+@keyframes description-animate {
+  0% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.slider-wrapper .slider .slider-description .description .slider-title {
+  display: none;
+}
+
+.slider-wrapper .slider .slider-description .description .slider-summary {
+  display: none;
+  line-height: 30px;
+}
+
+.slider-wrapper .slider .slider-description .description .slider-price {
+  display: none;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.slider-wrapper .slider .slider-description .description .payment-button {
+  display: none;
+  background-color: #73bbe6;
+  outline-style: none;
+  border: none;
+  color: #fff;
+  font-family: "iransans";
+  width: 100px;
+  height: 30px;
+  font-size: small;
+}
+
+.slider-wrapper .slider .slider-description .description-remove {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-play-state: running;
+  animation-name: descriptionRemove;
+}
+
+@keyframes descriptionRemove {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+.slider-wrapper .slider .slider-description .description-remove .slider-title {
+  display: none;
+}
+
+.slider-wrapper .slider .slider-description .description-remove .slider-summary {
+  display: none;
+  line-height: 30px;
+}
+
+.slider-wrapper .slider .slider-description .description-remove .slider-price {
+  display: none;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.slider-wrapper .slider .slider-description .description-remove .payment-button {
+  display: none;
+  background-color: #73bbe6;
+  outline-style: none;
+  border: none;
+  color: #fff;
+  font-family: "iransans";
+  width: 100px;
+  height: 30px;
+  font-size: small;
+}
+
+.slider-wrapper .footer {
+  padding: 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.slider-wrapper .footer .footer-specifications {
+  position: absolute;
+  right: 2%;
+  bottom: -40%;
+}
+
+.slider-wrapper .footer .footer-specifications .specification-animate {
+  animation-name: specify;
+  animation-duration: 1s;
+  animation-delay: 1;
+}
+
+@keyframes specify {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slider-wrapper .footer .footer-specifications .specification-animate-remove {
+  animation-name: specifyRemove;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes specifyRemove {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.slider-wrapper .footer .footer-specifications p {
+  padding: 0 10px;
+}
+
+.slider-wrapper .footer .specification {
+  display: none;
+}
+
+.slider-wrapper .footer .navigation-buttons {
+  position: absolute;
+  bottom: 10%;
+}
+
+.slider-wrapper .footer .navigation-buttons .prevBtn,
+.slider-wrapper .footer .navigation-buttons .nextBtn {
+  background-color: #636060;
+  border: 1px solid #b4b1b1;
+  outline-style: none;
+}
+
+.slider-wrapper .footer .navigation-buttons .prevBtn img,
+.slider-wrapper .footer .navigation-buttons .nextBtn img {
+  text-align: center;
+}
+
+.slider-wrapper .footer .navigation-buttons .nextBtn {
+  left: 1px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  padding: 20px 20px 0 0;
+}
+
+.sidebar .logo {
+  position: absolute;
+}
+
+.sidebar .social-media {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5%;
+}
+
+.sidebar .social-media a {
+  margin: 1px 0;
+}
+
+.sidebar .social-media a img {
+  width: 24px;
+  height: auto;
+}
+
+.sidebar .navLines {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 30%;
+}
+
+.sidebar .navLines .navLine {
+  display: inline-block;
+  height: 40px;
+  width: 1px;
+  background-color: #e0e1e4;
+}
+
+.sidebar .navLines .selected {
+  background-color: #73bbe6;
+}
+
+.sidebar .navLines .line-animate {
+  animation-name: line;
+  animation-duration: 2s;
+}
+
+@keyframes line {
+  0% {
+  }
+  100% {
+  }
+}
+/*# sourceMappingURL=style.css.map */
