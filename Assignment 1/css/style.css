@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "iransans";
+  src: url("font/IRANSansWeb(FaNum).woff");
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "iransans";
+  background-color: #f8faff;
+  margin: 0;
+}
+
+.flex-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container .cookie-alert-box {
+  width: 400px;
+  height: 200px;
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid #e5e6eb;
+  box-shadow: 0 0 10px 5px #e5e7ec;
+  background-color: #fff;
+}
+
+.flex-container .cookie-alert-box h4 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.flex-container .cookie-alert-box  p {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: #726d64;
+  padding: 0 40px 0 40px;
+}
+
+.flex-container .cookie-alert-box .flex-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.flex-container .cookie-alert-box .flex-btn-group .btn {
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "iransans";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.flex-container .cookie-alert-box .flex-btn-group .btn.agreed {
+  border: none;
+  margin-left: 11px;
+  color: #fff;
+  background: #ff878b;
+  background: linear-gradient(to bottom, #ff878b, #ff86b1);
+}
+
+.flex-container .cookie-alert-box .flex-btn-group .btn.opposed {
+  border: 1px solid #908bae;
+  margin-right: 11px;
+  background-color: #fff;
+}
